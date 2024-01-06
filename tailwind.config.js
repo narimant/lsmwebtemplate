@@ -8,10 +8,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'pattern-1': "url('/images/pattern/pattern-1.svg')",
+        'pattern-2': "url('/images/pattern/pattern-2.svg')",
       },
+      fontFamily:{
+       
+        'vazir':'vazir'
+      }
     },
   },
   plugins: [],
