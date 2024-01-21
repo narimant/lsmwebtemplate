@@ -19,7 +19,7 @@ const MainHero = () => {
         <div className="flex justify-start items-center gap-5">
           <Link
             href="#"
-            className="bg-green-600/90 p-4  text-white rounded-lg flex justify-start items-center gap-4"
+            className="bg-green-500 p-4  text-white rounded-lg flex justify-start items-center gap-4"
           >
             <span>شروع یادگیری برنامه نویسی</span>
             <span>
@@ -28,7 +28,7 @@ const MainHero = () => {
           </Link>
           <Link
             href="#"
-            className="bg-green-600/20 rounded-lg p-4 text-green-600"
+            className="bg-green-600/20 rounded-lg p-4 text-primary"
           >
             <span>درباره تیم استادشو</span>
           </Link>

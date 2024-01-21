@@ -17,7 +17,7 @@ const RootHeader = () => {
   };
   return (
     <>
-      <div className="w-full bg-green-600 bg-pattern-2 p-5">
+      <div className="w-full  bg-green-600 bg-pattern-2 p-5">
         <div className="container mx-auto font-vazirmatn text-white">
           <div className="flex justify-between items-center font-vazir">
             <h2 className=" font-bold text-xl">
@@ -33,9 +33,12 @@ const RootHeader = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-white py-6 shadow-md">
+
+
+
+      <div className="w-full py-1 sticky top-0 bg-white lg:py-6 shadow-md">
         <div className="container mx-auto py-1 flex justify-between items-center">
-          <div className="flex justify-between items-center gap-5 py-3">
+          <div className="flex pr-3 justify-between items-center gap-5 py-3">
             <button
               className="py-2 px-2 bg-green-100 text-green-800 rounded-lg  lg:hidden "
               onClick={() => setMobileMenu(!mobileMenu)}
@@ -76,7 +79,7 @@ const RootHeader = () => {
           </div>
 
           <div className=" justify-between items-center gap-3 hidden lg:flex">
-            <button className="py-4 px-4 bg-green-100 text-green-800 rounded-lg ">
+            <button className="py-4 px-4 bg-green-100 text-green-800 rounded-lg  ">
               <IoSearchOutline size={20} />
             </button>
 
@@ -98,20 +101,26 @@ const RootHeader = () => {
             </button>
           </div>
 
-          <button className="py-4 px-4 bg-green-100 text-green-800 rounded-lg  lg:hidden">
+          <button className="py-4 px-4 ml-3 bg-green-100 text-green-800 rounded-lg  lg:hidden">
             <LiaUserLockSolid />
           </button>
         </div>
       </div>
 
       {/* mobile menu */}
-      {mobileMenu && (
-        <div
-          className="absolute inset-0 backdrop-blur z-30"
+    
+       
+        
+          <div
+          className={`${mobileMenu ? 'fixed':'hidden' }  inset-0 backdrop-blur-sm z-30 bg-slate-800/25`}
           onClick={changeMobileMenu}
         >
+           </div>
+        
+       
+           
           <div
-            className="w-[300px] fixed right-0 bg-gray-400 bottom-0 top-0 p-5 z-30"
+            className={`${mobileMenu ? `translate-x-0`:`translate-x-64` } right-0 duration-500 fixed  bg-white bottom-0 top-0  p-5 z-30 `}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center">
@@ -130,8 +139,8 @@ const RootHeader = () => {
               </button>
             </div>
           </div>
-        </div>
-      )}
+      
+    
     </>
   );
 };
