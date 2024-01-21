@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import { CiShoppingBasket } from "react-icons/ci";
@@ -6,12 +6,15 @@ import { IoSearchOutline } from "react-icons/io5";
 import { LiaUserLockSolid } from "react-icons/lia";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
-const RootHeader = () => {
-const [mobileMenu,setMobileMenu]=useState(false);
-const changeMobileMenu=(e)=>{
 
-  setMobileMenu(!mobileMenu)
-}
+// type RootHeaderType= () => React.JSX.Element;
+
+
+const RootHeader = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const changeMobileMenu = () => {
+    setMobileMenu(!mobileMenu);
+  };
   return (
     <>
       <div className="w-full bg-green-600 bg-pattern-2 p-5">
@@ -33,7 +36,10 @@ const changeMobileMenu=(e)=>{
       <div className="w-full bg-white py-6 shadow-md">
         <div className="container mx-auto py-1 flex justify-between items-center">
           <div className="flex justify-between items-center gap-5 py-3">
-            <button className="py-2 px-2 bg-green-100 text-green-800 rounded-lg  lg:hidden " onClick={()=>setMobileMenu(!mobileMenu)}>
+            <button
+              className="py-2 px-2 bg-green-100 text-green-800 rounded-lg  lg:hidden "
+              onClick={() => setMobileMenu(!mobileMenu)}
+            >
               <CiMenuBurger size={25} />
             </button>
 
@@ -83,17 +89,16 @@ const changeMobileMenu=(e)=>{
 
             <label className="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" value="" className="sr-only peer" />
-              <div className="w-11 h-12 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-lg peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+              <div className="w-11 h-12 bg-gray-200 peer-focus:outline-none   rounded-lg peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-lg after:h-11 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
 
             <button className="flex justify-start items-center bg-green-500 text-white py-3 px-4 gap-2 rounded-lg hover:bg-green-800">
-              <LiaUserLockSolid />
+              <LiaUserLockSolid size={20}/>
               <span>ورود / عصویت</span>
             </button>
           </div>
 
           <button className="py-4 px-4 bg-green-100 text-green-800 rounded-lg  lg:hidden">
-     
             <LiaUserLockSolid />
           </button>
         </div>
@@ -101,21 +106,32 @@ const changeMobileMenu=(e)=>{
 
       {/* mobile menu */}
       {mobileMenu && (
-         <div className="absolute inset-0 backdrop-blur z-20" onClick={changeMobileMenu}> 
-         <div className="w-[300px] fixed right-0 bg-white h-full p-5 z-30" onClick={ (e)=>e.stopPropagation()}>
-           <div className="flex justify-between items-center">
-             <div> <img
-                 src="/images/ostad-sho-light.png"
-                 className="max-w-32 h-auto"
-               />
-               </div>
-             <button onClick={changeMobileMenu} className="py-2 px-2 bg-green-100 text-green-800 rounded-lg  "><IoClose size={25}/></button>
-           </div>
-          
-         </div>
-       </div>
+        <div
+          className="absolute inset-0 backdrop-blur z-30"
+          onClick={changeMobileMenu}
+        >
+          <div
+            className="w-[300px] fixed right-0 bg-gray-400 bottom-0 top-0 p-5 z-30"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center">
+              <div>
+                {" "}
+                <img
+                  src="/images/ostad-sho-light.png"
+                  className="max-w-32 h-auto"
+                />
+              </div>
+              <button
+                onClick={changeMobileMenu}
+                className="py-2 px-2 bg-green-100 text-green-800 rounded-lg  "
+              >
+                <IoClose size={25} />
+              </button>
+            </div>
+          </div>
+        </div>
       )}
-     
     </>
   );
 };
