@@ -7,8 +7,8 @@ import { RxPencil2 } from "react-icons/rx";
 import { TbRestore } from "react-icons/tb";
 const MainHero = () => {
   return (
-    <div className="container mx-auto flex justify-between ">
-      <div className="basis-8/12 flex flex-col justify-start items-start gap-5 flex-1">
+    <div className="container mx-auto flex flex-col-reverse  lg:flex-row md:justify-between  md:flex-row-reverse   ">
+      <div className="basis-8/12 flex mt-8 md:mt-0 flex-col justify-start items-start gap-5 flex-1">
         <h2 className="text-2xl font-bold">
           داستان برنامه نویس شدنت از اینجا شروع میشه!
         </h2>
@@ -16,19 +16,21 @@ const MainHero = () => {
           یادگیری برنامه‌نویسی آرزو نیست، فقط نیاز هست، تلاش و تمرین داشته
           باشید، بقیه‌اش با استاد شو
         </p>
-        <div className="flex justify-start items-center gap-5">
+        <div className="flex w-full md:w-auto flex-col md:flex-row md:justify-start items-center gap-5  ">
           <Link
             href="#"
-            className="bg-green-500 p-4  text-white rounded-lg flex justify-start items-center gap-4"
+            className="bg-green-500 p-4 w-full justify-center  md:w-auto  text-white rounded-lg flex md:justify-start items-center gap-4 "
           >
             <span>شروع یادگیری برنامه نویسی</span>
             <span>
               <IoIosArrowRoundBack />
             </span>
           </Link>
+
+
           <Link
             href="#"
-            className="bg-green-600/20 rounded-lg p-4 text-primary"
+            className="bg-green-600/20  w-full text-center md:w-auto rounded-lg p-4 text-primary"
           >
             <span>درباره تیم استادشو</span>
           </Link>
@@ -54,7 +56,9 @@ const MainHero = () => {
           </div>
         </div>
       </div>
-      <div className=" flex justify-center items-center basis-7/12">
+
+
+      <div className=" flex justify-center  items-center basis-7/12">
         <Image
           src="/images/header-image.png"
           width={400}

@@ -1,11 +1,12 @@
-import { Inter } from 'next/font/google'
+
 import '../globals.css'
 import React, { ReactNode } from 'react'
 import RootHeader from '@/components/template/root/RootHeader'
+import RootFooter from '@/components/template/root/RootFooter'
 
 
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -18,10 +19,10 @@ export default function RootLayout({ children }:Props) {
   return (
     <html lang="fa" dir='rtl'>
       <meta charSet="UTF-8"></meta>
-      <body className={inter.className}>
+      <body>
     <RootHeader />
         {children}
-        
+        <RootFooter />
         </body>
     </html>
   )
